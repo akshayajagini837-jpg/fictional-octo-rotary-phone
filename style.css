@@ -1,17 +1,18 @@
+/* GLOBAL */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f1f3f6;
 }
 
-/* Navbar */
-header {
+/* NAVBAR */
+.navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
   background: #2874f0;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .logo {
@@ -19,35 +20,66 @@ header {
   font-weight: bold;
 }
 
-input {
+.search-box {
+  display: flex;
   width: 40%;
-  padding: 8px;
 }
 
-button {
-  padding: 8px 12px;
+.search-box input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+}
+
+.search-box button {
+  padding: 8px;
   background: #ff9f00;
   border: none;
   cursor: pointer;
 }
 
-.cart {
-  font-weight: bold;
+.nav-right button {
+  background: white;
+  color: #2874f0;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
 }
 
-/* Products */
-#products {
+/* CATEGORIES */
+.categories {
+  display: flex;
+  justify-content: center;
+  background: white;
+  padding: 10px;
+  gap: 10px;
+}
+
+.categories button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+}
+
+/* PRODUCTS */
+#productContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
 .product {
   background: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   text-align: center;
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: scale(1.05);
 }
 
 .product img {
@@ -60,4 +92,31 @@ button {
   margin-top: 10px;
   background: #2874f0;
   color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* CART SIDEBAR */
+.cart-sidebar {
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  overflow-y: auto;
+}
+
+.cart-sidebar.active {
+  right: 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
