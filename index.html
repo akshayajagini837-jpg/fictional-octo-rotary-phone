@@ -7,17 +7,39 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <div class="logo">Flipkart</div>
-    <input type="text" id="search" placeholder="Search for products...">
-    <button onclick="searchProducts()">Search</button>
-    <div class="cart">Cart: <span id="cart-count">0</span></div>
-  </header>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Flipkart</div>
 
-  <!-- Product Section -->
-  <section id="products"></section>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for products...">
+    <button onclick="searchProducts()">🔍</button>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="nav-right">
+    <button onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+  </div>
+</header>
+
+<!-- CATEGORY BAR -->
+<section class="categories">
+  <button onclick="filterCategory('All')">All</button>
+  <button onclick="filterCategory('Electronics')">Electronics</button>
+  <button onclick="filterCategory('Fashion')">Fashion</button>
+  <button onclick="filterCategory('Home')">Home</button>
+</section>
+
+<!-- PRODUCT GRID -->
+<section id="productContainer"></section>
+
+<!-- CART SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3>Total: ₹<span id="cartTotal">0</span></h3>
+  <button onclick="clearCart()">Clear Cart</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
